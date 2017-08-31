@@ -5,7 +5,7 @@ import serializeForm from 'form-serialize'
 
 class CreateContact extends Component {
   handleSubmit = (e) => {
-    e.PreventDefault()
+    e.preventDefault()
     const values = serializeForm(e.target, { hash: true })
     if (this.props.onCreateContact)
       this.props.onCreateContact(values)
@@ -22,8 +22,8 @@ class CreateContact extends Component {
             maxHeight={64}
           />
           <div className='create-contact-details'>
-            <input type='text' name='name' placeholder='Name' />
-            <input type='text' name='email' placeholder='Email' />
+            <input type='text' name='name' placeholder='Name'/>
+            <input type='text' name='email' placeholder='Email'/>
             <button>Add Contact</button>
           </div>
         </form>
@@ -31,5 +31,6 @@ class CreateContact extends Component {
     )
   }
 }
+
 
 export default CreateContact
